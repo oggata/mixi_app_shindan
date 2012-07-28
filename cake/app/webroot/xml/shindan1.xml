@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Module>
+<ModulePrefs title="Hello">
+<Require feature="dynamic-height"/>
+<Require feature="opensocial-0.8"/>
+<Require feature="mixi-voice" />
+</ModulePrefs>
+<Content type="url" view="touch" href="http://shindan.blamestitch.com/cake/app/webroot/touch/touch.html" />
+<Content type="url" view="mobile" href="http://shindan.blamestitch.com/cake/app/webroot/touch/touch.html" />
+
+<Content type="html" view="home"><![CDATA[
+<table width="150" border="0">
+  <tr>
+    <td><a href="http://mixi.jp/view_appli.pl?id=33263" target="_top">いますぐ始める</a></td>
+  </tr>
+  <tr>
+    <td><a href="http://mixi.jp/view_appli.pl?id=33263" target="_top"><img src="http://shindan.blamestitch.com/png/akudaikan_home.png" width="150" height="150" border="0"></a></td>
+  </tr>
+</table>
+  ]]></Content>
+  <Content type="html" view="profile"><![CDATA[
+<table width="150" border="0">
+  <tr>
+    <td><a href="http://mixi.jp/view_appli.pl?id=33263" target="_top">いますぐ始める</a></td>
+  </tr>
+  <tr>
+    <td><a href="http://mixi.jp/view_appli.pl?id=33263" target="_top"><img src="http://shindan.blamestitch.com/png/akudaikan_home.png" width="150" height="150" border="0"></a></td>
+  </tr>
+</table>
+  ]]></Content>
+<Content type="html" view="canvas"><![CDATA[
+<div id="error"></div>
+<div id="target" style="margin:0 200; background-color:black; width:320px;"></div>
+
+
+<link rel="stylesheet" type="text/css" href="http://shindan.blamestitch.com/cake/app/webroot/css/all_default.css" />
+
+<script type="text/javascript">
+var id;
+var app_id;
+function init() {
+  var req = opensocial.newDataRequest();
+  req.add(req.newFetchPersonRequest(opensocial.IdSpec.PersonId.VIEWER), "viewer");
+  req.send(function(data) {
+  var viewer = data.get("viewer").getData();
+  id = viewer.getId();
+  //console.log('viewr_id>>');
+  //console.log(id);
+
+  //mixi only
+  app_id = gadgets.util.getUrlParameters()['app_id'];
+  //console.log('app_id>>');
+  //console.log(app_id);
+  var hasApp = viewer.getField(opensocial.Person.Field.HAS_APP);
+  if( hasApp != 'true'){
+    parent.location.href ="http://mixi.jp/view_appli.pl?id=" + app_id;
+  return;
+  }
+  var url = "http://shindan.blamestitch.com/cake/shindan1/top/?opensocial_owner_id=" + id + "&opensocial_app_id=" + app_id;
+  getSAPserverDATA(url);
+  });
+}
+
+function getSAPserverDATA(url){
+  document.getElementById("target").innerHTML = "";
+  document.getElementById("error").innerHTML = "";
+  var params = {};
+  var response = "";
+  params[gadgets.io.RequestParameters.METHOD] = gadgets.io.MethodType.GET;
+  params[gadgets.io.RequestParameters.CONTENT_TYPE] = gadgets.io.ContentType.TEXT;
+  params[gadgets.io.RequestParameters.AUTHORIZATION] = gadgets.io.AuthorizationType.NONE;
+
+  gadgets.io.makeRequest(url, function(response) {
+    if(response.rc == undefined){
+      document.getElementById("target").innerHTML= 'Invalid Response';
+    }
+    else if(response.rc != 200){
+       document.getElementById("target").innerHTML = 'Error: '+response.rc;
+    }else{
+      document.getElementById("target").innerHTML = response.data;
+    gadgets.window.adjustHeight();
+    }
+  }, params);
+}
+
+function requestShareApp(){
+  opensocial.requestShareApp("VIEWER_FRIENDS", null, function(response) {
+  if (response.hadError()) {
+    var errCode = response.getErrorCode();
+  } else {
+    var recipientIds = response.getData()["recipientIds"];
+    var url = "http://shindan.blamestitch.com/cake/shindan1/top/?opensocial_owner_id=" + id + "&opensocial_app_id=" + app_id;
+    getSAPserverDATA(url);
+  }
+});
+}
+
+function sendData(url, formObj){
+  if(formObj != false){
+    var i;
+  var array = [];
+  for (var i = 0; i < formObj.length; i++) {
+      var elem = formObj.elements[i];
+    var eType = elem.type.toLowerCase();
+    if(eType == "checkbox" || eType == "radio"){
+    if(elem.checked == true){
+      array.push(elem.name + '=' + elem.value);
+    }
+    }
+    else if(eType == "select" && elem.option.selected){
+      array.push(elem.name + '=' + elem.value);
+    }
+    else if(eType != "reset" && eType != "submit"){
+       array.push(elem.name + '=' + elem.value);
+    }
+    }
+    var param = array.join('&');
+  url = url + "&" +  param;
+  }
+  getSAPserverDATA(url);
+}
+
+function mixi_voice(str){
+  //var str = formObj.elements[0].value;
+  var params = {};
+  params[mixi.Status.Field.URL] = "http://mixi.jp/run_appli.pl?id=" + app_id;
+  mixi.requestUpdateStatus(str , function(response) {
+    if (response.hadError()) {
+      document.getElementById("error").innerHTML = "";
+      var code = response.getErrorCode();
+      var msg = response.getErrorMessage();
+      //document.getElementById("error").innerHTML = code + " " + msg;
+    }else{
+       parent.location.href = "http://mixi.jp/run_appli.pl?id=" + 33263;
+     return;
+    }
+  }, params);
+}
+
+function activity_update(str, item, mine_type){
+  var ap = {};
+  if(item != false){
+    var mediaItem = opensocial.newMediaItem("image/gif","http://shindan.blamestitch.com/img/icon_Img2.gif");
+    ap[opensocial.Activity.Field.MEDIA_ITEMS] = [mediaItem];
+  }
+  ap[opensocial.Activity.Field.TITLE] = str;
+  ap[opensocial.Activity.Field.URL] = "http://mixi.jp/run_appli.pl?id="  + 33263;
+  var activity = opensocial.newActivity(ap);
+  opensocial.requestCreateActivity(
+        activity, opensocial.CreateActivityPriority.HIGH, function(response) {
+          if (response.hadError()) {
+      document.getElementById("error").innerHTML = "";
+            var code = response.getErrorCode();
+            var msg = response.getErrorMessage();
+            //document.getElementById("error").innerHTML = code + " " + msg;
+          } else {
+         parent.location.href = "http://mixi.jp/run_appli.pl?id=" + 33263;
+           return;
+          }
+      });
+
+}
+
+function mixi_move_to(url){
+  mixi.util.requestExternalNavigateTo(url);
+}
+
+gadgets.util.registerOnLoadHandler(init);
+</script>
+
+]]></Content>
+</Module>

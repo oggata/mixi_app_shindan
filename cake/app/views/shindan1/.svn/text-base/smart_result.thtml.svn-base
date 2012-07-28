@@ -1,0 +1,83 @@
+<script type="text/javascript" charset="UTF-8" src="http://static.mixi.jp/js/application/touch.js"></script>
+<style type="text/css">
+<!--
+.style1 {color: #FFFFFF}
+-->
+</style>
+
+<form id="form1" name="form1" method="post">
+<table width="320" border="0" cellpadding="0" cellspacing="0" bgcolor="#000000">
+<!-- fwtable fwsrc="http://shindan.blamestitch.com/png/page/1.png" fwbase="page1.png" fwstyle="Dreamweaver" fwdocid = "1711591617" fwnested="0" -->
+  <tr>
+   <td><img src="http://shindan.blamestitch.com/png/page/spacer.gif" width="320" height="1" border="0" alt=""></td>
+   <td><img src="http://shindan.blamestitch.com/png/page/spacer.gif" width="1" height="1" border="0" alt=""></td>
+  </tr>
+  <tr>
+   <td><img src="http://shindan.blamestitch.com/cake/app/webroot/png/page/harakiri_<?php echo $imgno;?>.png" width="320" height="200"></td>
+   <td rowspan="2"><img src="http://shindan.blamestitch.com/png/page/spacer.gif" width="1" height="250" border="0" alt=""></td>
+  </tr>
+  <tr>
+    <td bgcolor="#666666"><H1><?php echo $titles;?></H1>
+      <?php echo $txt;?></td>
+  </tr>
+  <tr>
+   <td>     <span class="style1">
+   </span>
+ <div align="center">
+          <br>
+
+          <a href="javascript:void(0)" onClick="mixi_voice('悪代官診断であなたは【<?php echo $titles;?>】でした。<?php echo $lv;?>'); return false;"><span><img src="http://shindan.blamestitch.com/img/botan_activity.png" width="200" height="40" border="0" alt="通知する"/></span></a><br>
+          <a href="javascript:void(0)" onClick="activity_update('悪代官診断であなたは【<?php echo $titles;?>】でした。<?php echo $lv;?>','image/gif','http://shindan.blamestitch.com/img/icon_Img2.gif'); return false;"><span><img src="http://shindan.blamestitch.com/img/icon_b.png" width="126" height="40" border="0" alt="つぶやく"/></span></a><br>
+
+ </div>   <td><img src="http://shindan.blamestitch.com/png/page/spacer.gif" width="1" height="103" border="0" alt=""></td>
+  </tr>
+</table>
+<input name="page_name" type="hidden" value="<?php echo $page_name;?>" />
+<input name="next_page_name" type="hidden" value="<?php echo $next_page_name;?>" />
+<input name="all_score" type="hidden" value="<?php echo $game_score;?>" />
+</form>
+
+
+<script type="text/javascript">
+function mixi_voice(str){
+  //var str = formObj.elements[0].value;
+  var params = {};
+  params[mixi.Status.Field.URL] = "http://mixi.jp/run_appli.pl?id=" + 33263;
+  params[mixi.Status.Field.MOBILE_URL] = "http://ma.mixi.net/" + 33263 + "/?url=http://k-food.jp/mixi_shindan/mixi75/index.html?opensocial_owner_id=" + 33263 + "&opensocial_app_id=" + 33263;
+  //params[mixi.Status.Field.TOUCH_URL] = "http://mixi.jp/run_appli.pl?id=" + 33263;
+  mixi.requestUpdateStatus(str , function(response) {
+    if (response.hadError()) {
+      document.getElementById("error").innerHTML = "";
+      var code = response.getErrorCode();
+      var msg = response.getErrorMessage();
+      //document.getElementById("error").innerHTML = code + " " + msg;
+    }else{
+       parent.location.href = "http://mixi.jp/run_appli.pl?id=" + 33263;
+     return;
+    }
+  }, params);
+}
+
+function activity_update(str, item, mine_type){
+  var ap = {};
+  if(item != false){
+    var mediaItem = opensocial.newMediaItem(mine_type, item);
+    ap[opensocial.Activity.Field.MEDIA_ITEMS] = [mediaItem];
+  }
+  ap[opensocial.Activity.Field.TITLE] = str;
+  ap[opensocial.Activity.Field.URL] = "http://mixi.jp/run_appli.pl?id="  + 33263;
+  var activity = opensocial.newActivity(ap);
+  opensocial.requestCreateActivity(
+        activity, opensocial.CreateActivityPriority.HIGH, function(response) {
+          if (response.hadError()) {
+      document.getElementById("error").innerHTML = "";
+            var code = response.getErrorCode();
+            var msg = response.getErrorMessage();
+            //document.getElementById("error").innerHTML = code + " " + msg;
+          } else {
+         parent.location.href = "http://mixi.jp/run_appli.pl?id=" + 33263;
+           return;
+          }
+      });
+}
+</script>

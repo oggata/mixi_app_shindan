@@ -1,0 +1,22 @@
+<form id="form1" name="form1" method="post">
+<table width="320" border="0" cellpadding="0" cellspacing="0" bgcolor="#000000">
+<!-- fwtable fwsrc="http://shindan.blamestitch.com/png/page/1.png" fwbase="page1.png" fwstyle="Dreamweaver" fwdocid = "1711591617" fwnested="0" -->
+  <tr>
+   <td><img src="http://shindan.blamestitch.com/png/page/spacer.gif" width="320" height="1" border="0" alt=""></td>
+   <td><img src="http://shindan.blamestitch.com/png/page/spacer.gif" width="1" height="1" border="0" alt=""></td>
+  </tr>
+
+  <tr>
+   <td><img name="page1_r1_c1" src="http://shindan.blamestitch.com/png/page/akudaikan_1.png" width="320" height="450" border="0" alt=""></td>
+   <td><img src="http://shindan.blamestitch.com/png/page/spacer.gif" width="1" height="347" border="0" alt=""></td>
+  </tr>
+  <tr>
+   <td>
+     <div align="center"><a href="javascript:void(0)" onClick="sendData('http://shindan.blamestitch.com/cake/shindan1/page/', document.getElementById('form1')); return false;"><span><img src="http://shindan.blamestitch.com/img/botan_start.png" width="200" height="40" border="0" alt="診断を始める"/></span></a></div>
+     <div align="center"><a href="javascript:void(0)" onClick="requestShareApp(); return false;"><span><img src="http://shindan.blamestitch.com/img/botan_invite.png" width="200" height="40" border="0" alt="マイミクを招待"/></span></a></div></td>
+   <td><img src="http://shindan.blamestitch.com/png/page/spacer.gif" width="1" height="103" border="0" alt=""></td>
+  </tr>
+</table>
+<input name="next_page_name" type="hidden" value="page1" />
+<input name="all_score" type="hidden" value="0" />
+</form>

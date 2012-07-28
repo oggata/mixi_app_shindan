@@ -1,0 +1,102 @@
+<meta name="viewport" content="width=device-width , initial-scale=1.0, minimum-scale=1.0 , maximum-scale=1.0" />
+<script type="text/javascript" charset="UTF-8" src="http://static.mixi.jp/js/application/touch.js"></script>
+<link rel="stylesheet" type="text/css" href="http://shindan.blamestitch.com/cake/app/webroot/css/all_default.css" />
+
+
+<form id="form" name="form" method="post" action="/cake/shindan1/smart_page/page1/">
+<table width="320" border="0" cellpadding="0" cellspacing="0" bgcolor="#000000">
+<!-- fwtable fwsrc="http://shindan.blamestitch.com/png/page/1.png" fwbase="page1.png" fwstyle="Dreamweaver" fwdocid = "1711591617" fwnested="0" -->
+  <tr>
+   <td><img src="http://shindan.blamestitch.com/png/page/spacer.gif" width="320" height="1" border="0" alt=""></td>
+   <td><img src="http://shindan.blamestitch.com/png/page/spacer.gif" width="1" height="1" border="0" alt=""></td>
+  </tr>
+
+  <tr>
+   <td><img name="page1_r1_c1" src="http://shindan.blamestitch.com/png/page/akudaikan_1.png" width="320" height="450" border="0" alt=""></td>
+   <td><img src="http://shindan.blamestitch.com/png/page/spacer.gif" width="1" height="347" border="0" alt=""></td>
+  </tr>
+  <tr>
+   <td>
+     <div align="center"><input name="button1" type="image" onClick="DisableButton(this)" src="http://shindan.blamestitch.com/img/botan_start.png" alt="診断を開始する" width="200" height="40">
+     </div><div align="center"><a href="javascript:void(0)" onClick="invite_page(); return false;"><span><img src="http://shindan.blamestitch.com/img/botan_invite.png" width="200" height="40" border="0" alt="マイミクを招待"/></span></a></div>
+</td>
+   <td><img src="http://shindan.blamestitch.com/png/page/spacer.gif" width="1" height="103" border="0" alt=""></td>
+  </tr>
+</table>
+<input name="next_page_name" type="hidden" value="page1" />
+<input name="all_score" type="hidden" value="0" />
+<div id="div_str_id"></div>
+<div id="div_str_name"></div>
+<div id="div_str_thumbnail"></div>
+</form>
+
+<script type="text/javascript" charset="UTF-8" src="http://static.mixi.jp/js/application/touch.js"></script>
+
+<script type="text/javascript">
+function invite_page(){
+  opensocial.requestShareApp("VIEWER_FRIENDS", null, function(response) {
+    if (response.hadError()) {
+      var errCode = response.getErrorCode();
+      // do something...
+    } else {
+      // do something...
+    }
+  });
+}
+</script>
+
+
+<script type="text/javascript">
+  var oSearch = new CLocationSearch(location.search);
+  //window.alert(oSearch.item('opensocial_owner_id'));
+  var str_id = '<input type="hidden" name="id" value="' + oSearch.item('opensocial_owner_id') + '" />';
+  document.getElementById("div_str_id").innerHTML = str_id;
+  var str_name = '<input type="hidden" name="name" value="" />';
+  document.getElementById("div_str_name").innerHTML = str_name;
+  var str_thumbnail = '<input type="hidden" name="thumbnail" value="" />';
+  document.getElementById("div_str_thumbnail").innerHTML = str_thumbnail;
+  function CLocationSearch(sSource) {
+    var sAry = new Array();
+    {
+      var nCur = 0, nRet = 0;
+      var sSearch = sSource.substr(1);
+      var sName, sValue;
+
+      nRet = sSearch.indexOf('=', nCur)
+      while(nRet >= 0) {
+        sName = sSearch.substring(nCur, nRet);
+        nCur = nRet + 1;
+
+        nRet = sSearch.indexOf('&', nCur);
+        if (nRet == -1) nRet = sSearch.length + 1;
+        sValue = sSearch.substring(nCur, nRet);
+
+        sAry[sName] = sValue;
+
+        nCur = nRet + 1;
+        nRet = sSearch.indexOf('=', nCur);
+      }
+    }
+
+    this.valueOf = function () {
+      return sSource;
+    }
+
+    this.item = function (sVarname) {
+      try {
+        return sAry[sVarname];
+      } catch(e) {
+        return '';
+      }
+    }
+
+    this.length   = function () {
+      return sAry.length;
+    }
+
+    this.toString = function () {
+      return this.length + '';
+
+    }
+  }
+</script>

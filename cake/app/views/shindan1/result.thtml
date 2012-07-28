@@ -1,0 +1,38 @@
+<style type="text/css">
+<!--
+.style1 {color: #FFFFFF}
+-->
+</style>
+
+<form id="form1" name="form1" method="post">
+<table width="320" border="0" cellpadding="0" cellspacing="0" bgcolor="#000000">
+<!-- fwtable fwsrc="http://shindan.blamestitch.com/png/page/1.png" fwbase="page1.png" fwstyle="Dreamweaver" fwdocid = "1711591617" fwnested="0" -->
+  <tr>
+   <td><img src="http://shindan.blamestitch.com/png/page/spacer.gif" width="320" height="1" border="0" alt=""></td>
+   <td><img src="http://shindan.blamestitch.com/png/page/spacer.gif" width="1" height="1" border="0" alt=""></td>
+  </tr>
+  <tr>
+   <td><img src="http://shindan.blamestitch.com/cake/app/webroot/png/page/harakiri_<?php echo $imgno;?>.png" width="320" height="200"></td>
+   <td rowspan="2"><img src="http://shindan.blamestitch.com/png/page/spacer.gif" width="1" height="250" border="0" alt=""></td>
+  </tr>
+  <tr>
+    <td bgcolor="#666666"><H1><?php echo $titles;?></H1>
+      <?php echo $txt;?></td>
+  </tr>
+  <tr>
+   <td>     <div align="center"><span class="style1">
+     </span>
+         <br>
+         <br>
+         <div align="left">
+         <a href="javascript:void(0)" onClick="mixi_voice('悪代官診断であなたは【<?php echo $titles;?>】でした。<?php echo $lv;?>'); return false;"><span><img src="http://shindan.blamestitch.com/img/icon_b.png" width="126" height="40" border="0" alt="つぶやく"/></span></a><br>
+          <a href="javascript:void(0)" onClick="activity_update('悪代官診断であなたは【<?php echo $titles;?>】でした。<?php echo $lv;?>','image/gif','http://shindan.blamestitch.com/img/icon_Img2.gif'); return false;"><span><img src="http://shindan.blamestitch.com/img/botan_activity.png" width="200" height="40" border="0" alt="通知する"/></span></a><br>
+
+ </div>
+   <td><img src="http://shindan.blamestitch.com/png/page/spacer.gif" width="1" height="103" border="0" alt=""></td>
+  </tr>
+</table>
+<input name="page_name" type="hidden" value="<?php echo $page_name;?>" />
+<input name="next_page_name" type="hidden" value="<?php echo $next_page_name;?>" />
+<input name="all_score" type="hidden" value="<?php echo $game_score;?>" />
+</form>

@@ -1,0 +1,229 @@
+question_1: 子供の頃、おつかいの時のお釣りを返さなかったことがある
+question_2: 何かを夢中で集めたことがある
+question_3: 唯一、金で買えないものがあるとしたら？
+question_4: １億円宝くじが当たったらどうする？
+question_5: ギャンブルするならどれが成功しそう？
+question_6: 自分が商売するならどういう業界？
+question_7: 商売で儲かることはどういうこと？
+question_8: 今の給与（または小遣い）に満足している？
+question_9: １００万円の重量ってどのくらい？
+question_10: スーパーや薬局などで貰えるポイントカードは貯める？
+
+
+answer_1:
+  -data
+    txt: いつもそうだった
+    name: SCORE
+    score: 2
+  -data
+    txt: たまにある
+    name: SCORE
+    score: 1
+  -data
+    txt: まったくない
+    name: SCORE
+    score: 0
+answer_2:
+  -data
+    txt: いつもそうだった
+    name: SCORE
+    score: 2
+  -data
+    txt: たまにある
+    name: SCORE
+    score: 1
+  -data
+    txt: まったくない
+    name: SCORE
+    score: 0
+answer_3:
+  -data
+    txt: 人の心
+    name: SCORE
+    score: 0
+  -data
+    txt: 幸福感
+    name: SCORE
+    score: 2
+  -data
+    txt: 威厳・人格
+    name: SCORE
+    score: 1
+answer_4:
+  -data
+    txt: 募金等誰かの幸せのために使う
+    name: SCORE
+    score: 0
+  -data
+    txt: 高級車やブランド品で物欲を満たす
+    name: SCORE
+    score: 2
+  -data
+    txt: 貯金をして老後に備える
+    name: SCORE
+    score: 1
+answer_5:
+  -data
+    txt: TOTO
+    name: SCORE
+    score: 0
+  -data
+    txt: 競馬
+    name: SCORE
+    score: 1
+  -data
+    txt: 株
+    name: SCORE
+    score: 2
+answer_6:
+  -data
+    txt: 不動産ビジネス
+    name: SCORE
+    score: 1
+  -data
+    txt: ＩＴビジネス
+    name: SCORE
+    score: 0
+  -data
+    txt: 人材ビジネス
+    name: SCORE
+    score: 2
+answer_7:
+  -data
+    txt: 生きる為に必要なこと
+    name: SCORE
+    score: 0
+  -data
+    txt: 悪いことだ
+    name: SCORE
+    score: 1
+  -data
+    txt: 社会貢献で素敵なこと
+    name: SCORE
+    score: 2
+answer_8:
+  -data
+    txt: 妥当な金額だと心底思っている
+    name: SCORE
+    score: 0
+  -data
+    txt: 有り余って困る位なので助けて欲しい
+    name: SCORE
+    score: 1
+  -data
+    txt: 全然足りずに悲観している
+    name: SCORE
+    score: 2
+answer_9:
+  -data
+    txt: 心臓の重さ
+    name: SCORE
+    score: 1
+  -data
+    txt: 銃の重さ
+    name: SCORE
+    score: 2
+  -data
+    txt: 米１０合の重さ
+    name: SCORE
+    score: 0
+answer_10:
+  -data
+    txt: まったく貯めない。興味がない。
+    name: SCORE
+    score: 0
+  -data
+    txt: 雨の日２倍などイベントのときのみ貯める。
+    name: SCORE
+    score: 2
+  -data
+    txt: かかさず貯めるようにしている。
+    name: SCORE
+    score: 1
+
+result:
+  -data
+    score:0
+    titles: ガラスハート悪代官
+    txt: ちょっとしたことですぐ落ち込んでしまう悪代官。まわりの越後屋にもやたら気を使わせる。
+    lv: ★(無罪放免)
+  -data
+    score:4
+    titles: 友達がいない悪代官
+    txt: ひとりぼっちの悪代官。
+    lv: ★(無罪放免)
+  -data
+    score:5
+    titles: 猫アレルギー悪代官
+    txt: 猫が近づくとくしゃみが止まらない悪代官。
+    lv: ★(無罪放免)
+  -data
+    score:6
+    titles: もらい泣き悪代官
+    txt: お涙頂戴の場面ではいつも号泣。
+    lv: ★★(軽微)
+  -data
+    score:7
+    titles: ネガティブ悪代官
+    txt: おれはもう駄目だーといつもつぶやいている悪代官。
+    lv: ★★(軽微)
+  -data
+    score:8
+    titles: チャラ(男or女)悪代官
+    txt: なんかちゃらいという理由で皆から嫌われる悪代官。
+    lv: ★★(軽微)
+  -data
+    score:9
+    titles: どＭ悪代官
+    txt: 悪いことをやる目的は、成敗されたいが為。紐で縛られたい願望を持つとんでもなく「どＭ」な悪代官。
+    lv: ★★★(悪質)
+  -data
+    score:10
+    titles: 引きこもり悪代官
+    txt: 自分の殻に閉じこもり、他人との関わりを拒絶する悪代官。
+    lv: ★★★(悪質)
+  -data
+    score:10
+    titles: サブカル悪代官
+    txt: マイナー路線を好み、他人と違うことが良いと思いこんでいる悪代官。
+    lv: ★★★(悪質)
+  -data
+    score:12
+    titles: 休みがち悪代官
+    txt: 熱があって今日は休みます...と頻繁にメールをしてくる悪代官。
+    lv: ★★★(悪質)
+  -data
+    score:13
+    titles: 非モテ悪代官
+    txt: ああああああああああああ
+    lv: ★★★★（非道）
+  -data
+    score:14
+    titles: どや顔悪代官
+    txt: ことあるごとに自慢気な態度を取る悪代官。
+    lv: ★★★★（非道）
+  -data
+    score:15
+    titles: ザ.セクハラ悪代官
+    txt: 芸者を座敷によんではセクハラばかりする悪代官。性欲が半端ない。
+    lv: ★★★★（非道）
+  -data
+    score:16
+    titles: モンスター悪代官
+    txt: 越後屋に些細なことでクレームをつけたり、無茶な要求をする悪代官。
+    lv: ★★★★★（極悪非道）
+  -data
+    score:17
+    titles: 中ニ病末期の悪代官
+    txt: ああああああああああああ
+    lv: ★★★★★（極悪非道）
+  -data
+    score:18
+    titles: ウジ虫のような悪代官
+    txt: ああああああああああああ
+    lv: ★★★★★（極悪非道）
+  -data
+    score:19
+    titles: 煩悩の塊のような悪代官
+    txt: 世の中の欲という欲を
+    lv: ★★★★★（極悪非道）

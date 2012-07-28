@@ -1,0 +1,39 @@
+8
+
+dir
+4
+http://182.48.52.148/svn/repos/shindan/trunk/app/webroot/js
+http://182.48.52.148/svn/repos/shindan
+
+
+
+2011-08-29T08:05:48.877504Z
+4
+
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+33ecfdaf-5dc3-4421-b2be-a18b55d91bc7
+
+vendors.php
+file
+
+
+
+
+2008-12-25T06:30:32.000000Z
+87490c9421a4015cfd60d66813d0a91b
+2011-08-29T08:05:48.877504Z
+4
+

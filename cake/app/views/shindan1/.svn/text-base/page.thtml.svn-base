@@ -1,0 +1,46 @@
+<style type="text/css">
+<!--
+.style1 {color: #FFFFFF}
+-->
+</style>
+
+<form id="form1" name="form1" method="post">
+<table width="320" border="0" cellpadding="0" cellspacing="0" bgcolor="#000000">
+<!-- fwtable fwsrc="http://shindan.blamestitch.com/png/page/1.png" fwbase="page1.png" fwstyle="Dreamweaver" fwdocid = "1711591617" fwnested="0" -->
+  <tr>
+   <td><img src="http://shindan.blamestitch.com/png/page/spacer.gif" width="320" height="1" border="0" alt=""></td>
+   <td><img src="http://shindan.blamestitch.com/png/page/spacer.gif" width="1" height="1" border="0" alt=""></td>
+  </tr>
+  <tr>
+   <td><img src="http://shindan.blamestitch.com/png/page/<?php echo $page_name;?>.png" alt="" name="page1_r1_c1" width="320" height="200" border="0"></td>
+   <td rowspan="2"><img src="http://shindan.blamestitch.com/png/page/spacer.gif" width="1" height="250" border="0" alt=""></td>
+  </tr>
+  <tr>
+    <td bgcolor="#666666"><?php echo $q_txt;?></td>
+  </tr>
+  <tr>
+   <td>     <span class="style1">
+   </span>
+     <table width="310" border="0">
+<?php $i=0;?>
+       <?php foreach($answers as $answer): ?>
+       <tr>
+         <td width="21"><span class="style1">
+           <input name="score" type="radio" value="<?php echo $answer['score'];?>" <?php if($i==0){?>checked<?php }?>>
+         </span></td>
+         <td width="279"><span class="style1"><?php echo $answer['txt'];?></span></td>
+       </tr>
+       <?php $i+=1;?>
+       <?php endforeach; ?>
+
+     </table>
+     <div align="center"><br>
+         <br>
+         <a href="javascript:void(0)" onClick="return sendData('http://shindan.blamestitch.com/cake/shindan1/page/', document.getElementById('form1'));"><span><img src="http://shindan.blamestitch.com/img/botan_next.png" width="200" height="40" border="0" alt="診断を始める"/></span></a></div></td>
+   <td><img src="http://shindan.blamestitch.com/png/page/spacer.gif" width="1" height="103" border="0" alt=""></td>
+  </tr>
+</table>
+<input name="page_name" type="hidden" value="<?php echo $page_name;?>" />
+<input name="next_page_name" type="hidden" value="<?php echo $next_page_name;?>" />
+<input name="all_score" type="hidden" value="<?php echo $all_score;?>" />
+</form>

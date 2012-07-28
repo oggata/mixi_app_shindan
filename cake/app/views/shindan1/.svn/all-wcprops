@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/repos/shindan/!svn/ver/33/trunk/app/views/shindan1
+END
+result.thtml
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/repos/shindan/!svn/ver/46/trunk/app/views/shindan1/result.thtml
+END
+smart_invite.thtml
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/repos/shindan/!svn/ver/22/trunk/app/views/shindan1/smart_invite.thtml
+END
+page.thtml
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/repos/shindan/!svn/ver/31/trunk/app/views/shindan1/page.thtml
+END
+minigame.thtml
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/repos/shindan/!svn/ver/33/trunk/app/views/shindan1/minigame.thtml
+END
+top.thtml
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/repos/shindan/!svn/ver/31/trunk/app/views/shindan1/top.thtml
+END
+session_lost.thtml
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/repos/shindan/!svn/ver/17/trunk/app/views/shindan1/session_lost.thtml
+END
+smart_result.thtml
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/repos/shindan/!svn/ver/46/trunk/app/views/shindan1/smart_result.thtml
+END
+smart_page.thtml
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/repos/shindan/!svn/ver/31/trunk/app/views/shindan1/smart_page.thtml
+END

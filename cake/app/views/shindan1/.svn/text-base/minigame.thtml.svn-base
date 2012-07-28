@@ -1,0 +1,6 @@
+<meta name="viewport" content="width=device-width , initial-scale=1.0, minimum-scale=1.0 , maximum-scale=1.0" />
+<div style="text-align:center;">
+<canvas id="canvas" width="320" height="400" style="background-color:white; border:1px solid #CCC;">canvasをサポートしたブラウザが必要です。</canvas>
+</div>
+<script type="text/javascript" charset="UTF-8" src="http://shindan.blamestitch.com/cake/app/webroot/js/daikan.js"></script>
+

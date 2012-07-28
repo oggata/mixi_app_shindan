@@ -1,0 +1,32 @@
+<script type="text/javascript" charset="UTF-8" src="http://static.mixi.jp/js/application/touch.js"></script>
+<script type="text/javascript">
+
+opensocial.requestShareApp("VIEWER_FRIENDS", null, function(response) {
+  if (response.hadError()) {
+    var errCode = response.getErrorCode();
+    // do something...
+  } else {
+    // do something...
+  }
+});
+
+</script><style type="text/css">
+<!--
+body {
+  background-color: #333333;
+}
+-->
+</style>
+<table width="320" border="0" bgcolor="#333333">
+  <tr>
+    <td bgcolor="#333333">&nbsp;</td>
+  </tr>
+  <tr>
+    <td>この画面は招待用のページです。<br>
+      Mixi本体側から招待ウインドウが開きます。<br>
+      ウィンドウが開かない場合は、対応機種等確認してください。</td>
+  </tr>
+  <tr>
+    <td height="128">&nbsp;</td>
+  </tr>
+</table>
